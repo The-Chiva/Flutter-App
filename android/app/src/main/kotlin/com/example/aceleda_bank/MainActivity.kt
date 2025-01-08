@@ -1,0 +1,5 @@
+package com.example.aceleda_bank
+
+import io.flutter.embedding.android.FlutterActivity
+
+class MainActivity: FlutterActivity()
