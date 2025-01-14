@@ -18,11 +18,12 @@ class AppButton extends StatelessWidget {
     this.iconSize,
     this.textStyle,
     this.customPadding,
+    this.space,
   });
 
   final String? icon, text;
   final void Function()? onTab;
-  final double? width, height;
+  final double? width, height, space;
   final MainAxisAlignment mainAxisAlignment;
   final Color? color;
   final double padding;
@@ -55,6 +56,7 @@ class AppButton extends StatelessWidget {
         child: Padding(
           padding: customPadding ?? EdgeInsets.all(padding),
           child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: mainAxisAlignment,
             children: [
               if (icon != null)
@@ -65,6 +67,7 @@ class AppButton extends StatelessWidget {
                   height: iconSize,
                   fit: BoxFit.cover,
                 ),
+              SizedBox(width: space),
               Text(
                 text ?? "",
                 style: textStyle,

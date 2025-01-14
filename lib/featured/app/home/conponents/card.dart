@@ -2,7 +2,6 @@ import 'package:aceleda_bank/common/styles/colors/appcolor.dart';
 import 'package:aceleda_bank/common/widgets/button.dart';
 import 'package:aceleda_bank/common/widgets/text.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 class CardSevices extends StatelessWidget {
   const CardSevices({
@@ -121,7 +120,7 @@ class CardSevices extends StatelessWidget {
                             height: 90,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(100),
-                              image: DecorationImage(
+                              image: const DecorationImage(
                                 image: AssetImage(
                                   "assets/images/png/logo.png",
                                 ),
@@ -129,7 +128,7 @@ class CardSevices extends StatelessWidget {
                               ),
                             ),
                           ),
-                          AppText(
+                          const AppText(
                             text: "069496048",
                             size: 18,
                           ),
