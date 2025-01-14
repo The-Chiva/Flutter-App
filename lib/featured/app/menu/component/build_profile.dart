@@ -6,13 +6,14 @@ import 'package:flutter/material.dart';
 class ProFile extends StatelessWidget {
   const ProFile({
     super.key,
-    required String name,
-    required String phone,
-  })  : _name = name,
-        _phone = phone;
+    required this.name,
+    required this.phone,
+    required this.image,
+  });
 
-  final String _name;
-  final String _phone;
+  final String name;
+  final String phone;
+  final String image;
 
   @override
   Widget build(BuildContext context) {
@@ -29,10 +30,9 @@ class ProFile extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
                   color: Appcolors.primaryLight,
-                  image: const DecorationImage(
+                  image: DecorationImage(
                     fit: BoxFit.cover,
-                    image: NetworkImage(
-                        "https://i.pinimg.com/736x/6e/58/b7/6e58b75150c447673afca5d2f16f163c.jpg"),
+                    image: AssetImage(image),
                   ),
                 ),
               ),
@@ -42,13 +42,13 @@ class ProFile extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   AppText(
-                    text: _name,
+                    text: name,
                     color: Appcolors.gold,
                     size: 20,
                   ),
                   const SizedBox(height: 8.0),
                   AppText(
-                    text: _phone,
+                    text: phone,
                     color: Appcolors.light,
                     size: 20,
                   ),

@@ -1,4 +1,5 @@
 import 'package:aceleda_bank/common/styles/colors/appcolor.dart';
+import 'package:aceleda_bank/common/styles/fonts/app_font.dart';
 import 'package:aceleda_bank/common/widgets/button.dart';
 import 'package:aceleda_bank/common/widgets/text.dart';
 import 'package:aceleda_bank/featured/app/app_view_model.dart';
@@ -21,8 +22,9 @@ class FavoritePage extends StatelessWidget {
             children: [
               const AppText(
                 text: "Favorites",
-                size: 30,
+                size: 26,
                 color: Appcolors.light,
+                fontFamily: AppFonts.medium,
               ),
               AppButton(
                 icon: "assets/images/svg/logo_ac.svg",

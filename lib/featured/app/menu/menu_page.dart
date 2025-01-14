@@ -1,19 +1,22 @@
+import 'dart:developer';
+
 import 'package:aceleda_bank/common/styles/colors/appcolor.dart';
+import 'package:aceleda_bank/common/styles/fonts/app_font.dart';
 import 'package:aceleda_bank/common/widgets/button.dart';
 import 'package:aceleda_bank/common/widgets/text.dart';
 import 'package:aceleda_bank/featured/app/app_view_model.dart';
 import 'package:aceleda_bank/featured/app/menu/component/build_footer.dart';
 import 'package:aceleda_bank/featured/app/menu/component/build_long_out.dart';
 import 'package:aceleda_bank/featured/app/menu/component/build_profile.dart';
+import 'package:aceleda_bank/featured/app/menu/model/list_tile_item.dart';
 import 'package:flutter/material.dart';
-
+import 'package:get/get.dart';
 import '../../../common/widgets/list_tile.dart';
 
 class MenuPage extends StatelessWidget {
-  const MenuPage({super.key});
+  MenuPage({super.key});
 
-  final String _name = "THE CHIVA";
-  final String _phone = "069 496 048";
+  final ListTileModel tile = ListTileModel();
 
   @override
   Widget build(BuildContext context) {
@@ -22,6 +25,7 @@ class MenuPage extends StatelessWidget {
       appBar: PreferredSize(
         preferredSize: const Size(double.infinity, 60),
         child: AppBar(
+          automaticallyImplyLeading: false,
           backgroundColor: Appcolors.primary,
           title: Padding(
             padding: const EdgeInsets.only(bottom: 16.0),
@@ -32,9 +36,10 @@ class MenuPage extends StatelessWidget {
                   text: "Menu",
                   size: 30,
                   color: Appcolors.light,
+                  fontFamily: AppFonts.medium,
                 ),
                 AppButton(
-                  icon: "assets/images/svg/logo_ac.svg",
+                  icon: "assets//mages/svg/logo_ac.svg",
                   iconSize: 35,
                   onTab: () => pageModel.page.value = 0,
                 )
@@ -48,8 +53,9 @@ class MenuPage extends StatelessWidget {
           children: [
             // ===== Profile =====
             ProFile(
-              name: _name,
-              phone: _phone,
+              image: "assets/images/png/logo.png",
+              name: "THE CHIVA",
+              phone: "069 496 048",
             ),
             // ===== =====
             Container(
@@ -71,10 +77,9 @@ class MenuPage extends StatelessWidget {
                     width: double.infinity,
                     height: 100,
                     decoration: BoxDecoration(
-                      image: const DecorationImage(
+                      image: DecorationImage(
                         fit: BoxFit.cover,
-                        image: NetworkImage(
-                            "https://www.acledasecurities.com.kh/as/assets/image/banner-csxtrade-eng.jpg"),
+                        image: AssetImage("assets/images/png/banner1.jpg"),
                       ),
                       borderRadius: BorderRadius.circular(16),
                     ),
@@ -110,105 +115,47 @@ class MenuPage extends StatelessWidget {
                   // ===== setting =====
                   Container(
                     width: double.infinity,
-                    height: MediaQuery.sizeOf(context).height / 1.69,
+                    height: MediaQuery.sizeOf(context).height / 1.57,
                     decoration: BoxDecoration(
-                        color: Appcolors.light,
-                        borderRadius: BorderRadius.circular(16.0)),
-                    child: ListView(
+                      color: Appcolors.light,
+                      borderRadius: BorderRadius.circular(16.0),
+                    ),
+                    child: ListView.builder(
+                      itemCount: tile.listItems.length,
                       shrinkWrap: true,
                       physics: const NeverScrollableScrollPhysics(),
-                      children: const [
-                        BuildListTile(
-                          tilte: "Country and Language",
-                          leading: Icon(Icons.language),
-                          icon: Icon(
-                            Icons.arrow_forward_ios,
-                            size: 20,
-                            color: Appcolors.solid,
+                      itemBuilder: (context, index) {
+                        final item = tile.listItems[index];
+                        return GestureDetector(
+                          onTap: () {
+                            final page = tile.listItems[index]['page'];
+                            if (page != null) {
+                              Get.to(page);
+                            } else {
+                              log("Error: Page is not defined or invalid.");
+                            }
+                          },
+                          child: Container(
+                            decoration: const BoxDecoration(
+                              border: Border(
+                                bottom: BorderSide(
+                                  color: Appcolors.strock,
+                                  width: 1,
+                                ),
+                              ),
+                            ),
+                            child: BuildListTile(
+                              tilte: item['title'],
+                              leading: Icon(item['icon']),
+                              icon: const Icon(
+                                Icons.arrow_forward_ios,
+                                size: 20,
+                                color: Appcolors.solid,
+                              ),
+                            ),
                           ),
-                        ),
-                        BuildListTile(
-                          tilte: "Location",
-                          leading: Icon(Icons.location_on_outlined),
-                          icon: Icon(
-                            Icons.arrow_forward_ios,
-                            size: 20,
-                            color: Appcolors.solid,
-                          ),
-                        ),
-                        BuildListTile(
-                          tilte: "Terms and Conditions",
-                          leading: Icon(Icons.insert_drive_file_outlined),
-                          icon: Icon(
-                            Icons.arrow_forward_ios,
-                            size: 20,
-                            color: Appcolors.solid,
-                          ),
-                        ),
-                        BuildListTile(
-                          tilte: "Products & Services",
-                          leading: Icon(Icons.home_work_outlined),
-                          icon: Icon(
-                            Icons.arrow_forward_ios,
-                            size: 20,
-                            color: Appcolors.solid,
-                          ),
-                        ),
-                        BuildListTile(
-                          tilte: "FAQs",
-                          leading: Icon(Icons.cable),
-                          icon: Icon(
-                            Icons.arrow_forward_ios,
-                            size: 20,
-                            color: Appcolors.solid,
-                          ),
-                        ),
-                        BuildListTile(
-                          tilte: "Invite Friends",
-                          leading: Icon(Icons.person_add_alt_1_outlined),
-                          icon: Icon(
-                            Icons.arrow_forward_ios,
-                            size: 20,
-                            color: Appcolors.solid,
-                          ),
-                        ),
-                        BuildListTile(
-                          tilte: "ACleda Bank's Stock",
-                          leading: Icon(Icons.security),
-                          icon: Icon(
-                            Icons.arrow_forward_ios,
-                            size: 20,
-                            color: Appcolors.solid,
-                          ),
-                        ),
-                        BuildListTile(
-                          tilte: "Security Tips",
-                          leading: Icon(Icons.language),
-                          icon: Icon(
-                            Icons.arrow_forward_ios,
-                            size: 20,
-                            color: Appcolors.solid,
-                          ),
-                        ),
-                        BuildListTile(
-                          tilte: "Contact Us (24/7)",
-                          leading: Icon(Icons.phone),
-                          icon: Icon(
-                            Icons.arrow_forward_ios,
-                            size: 20,
-                            color: Appcolors.solid,
-                          ),
-                        ),
-                        BuildListTile(
-                          tilte: "Help",
-                          leading: Icon(Icons.help),
-                          icon: Icon(
-                            Icons.arrow_forward_ios,
-                            size: 20,
-                            color: Appcolors.solid,
-                          ),
-                        ),
-                      ],
+                        );
+                      },
                     ),
                   ),
                   const SizedBox(height: 16),

@@ -1,4 +1,5 @@
 import 'package:aceleda_bank/common/styles/colors/appcolor.dart';
+import 'package:aceleda_bank/common/styles/fonts/app_font.dart';
 import 'package:aceleda_bank/common/widgets/button.dart';
 import 'package:aceleda_bank/common/widgets/text.dart';
 import 'package:flutter/material.dart';
@@ -36,6 +37,7 @@ class BuildTranSlation extends StatelessWidget {
                         AppButton(
                           icon: "assets/images/svg/scan_qr.svg",
                           iconSize: 24,
+                          iconColor: Appcolors.primary,
                           color: Appcolors.strock,
                           radius: 50.0,
                         ),
@@ -46,6 +48,8 @@ class BuildTranSlation extends StatelessWidget {
                             AppText(
                               text: "ACLEDA Mobile",
                               size: 18,
+                              fontFamily: AppFonts.medium,
+                              color: Appcolors.primary,
                             ),
                             SizedBox(height: 4.0),
                             AppText(

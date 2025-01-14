@@ -1,6 +1,9 @@
 import 'package:aceleda_bank/common/styles/colors/appcolor.dart';
 import 'package:aceleda_bank/common/widgets/button.dart';
+import 'package:aceleda_bank/featured/app/home/conponents/contract_us.dart';
+import 'package:aceleda_bank/featured/app/home/conponents/my_khqr.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class HomeAppBar extends StatelessWidget {
   const HomeAppBar({
@@ -11,8 +14,6 @@ class HomeAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return AppBar(
       backgroundColor: Appcolors.primary,
-      // shadowColor: Appcolors.light,
-      // bottomOpacity: 100,
       elevation: 1,
       foregroundColor: Appcolors.primary,
       title: Image.asset(
@@ -22,23 +23,21 @@ class HomeAppBar extends StatelessWidget {
       ),
       actions: [
         AppButton(
-          // width: 24,
           icon: "assets/images/svg/bot.svg",
-          iconSize: 30,
+          iconSize: 32,
           padding: 0,
           iconColor: Appcolors.light,
-          onTab: () {},
+          onTab: () => Get.to(() => ContractUs()),
         ),
         Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.symmetric(horizontal: 16),
           child: AppButton(
             icon: "assets/images/svg/scanqr.svg",
-            iconSize: 20,
-            padding: 15,
+            iconSize: 22,
             customPadding: const EdgeInsets.all(5),
             iconColor: Appcolors.light,
             color: Appcolors.red,
-            onTab: () {},
+            onTab: () => Get.to(() => MyKhqr()),
           ),
         ),
       ],

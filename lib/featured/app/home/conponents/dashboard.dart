@@ -1,6 +1,5 @@
-import 'dart:developer';
-
 import 'package:aceleda_bank/common/styles/colors/appcolor.dart';
+import 'package:aceleda_bank/common/styles/fonts/app_font.dart';
 import 'package:aceleda_bank/common/widgets/button.dart';
 import 'package:aceleda_bank/common/widgets/text.dart';
 import 'package:aceleda_bank/featured/app/home/home_view_model.dart';
@@ -55,6 +54,7 @@ class DashBoard extends StatelessWidget {
                     AppText(
                       text: homeMoel.pages[index]['title'],
                       color: Appcolors.light,
+                      fontFamily: AppFonts.medium,
                     ),
                   ],
                 ),

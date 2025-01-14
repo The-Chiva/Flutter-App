@@ -5,12 +5,12 @@ class BuildListTile extends StatelessWidget {
     super.key,
     required this.tilte,
     required this.leading,
-    required this.icon,
+    this.icon,
     this.textstyle,
   });
   final String tilte;
   final Widget leading;
-  final Widget icon;
+  final Widget? icon;
   final TextStyle? textstyle;
 
   @override

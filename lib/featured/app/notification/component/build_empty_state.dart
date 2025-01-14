@@ -3,7 +3,11 @@ import 'package:aceleda_bank/common/widgets/button.dart';
 import 'package:aceleda_bank/common/widgets/text.dart';
 import 'package:flutter/material.dart';
 
-Widget buildBankInfo() {
+class BuildBankInfo extends StatelessWidget {
+  const BuildBankInfo({super.key});
+
+  @override
+  Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.only(top: 100.0),
       width: double.infinity,
@@ -35,3 +39,4 @@ Widget buildBankInfo() {
       ),
     );
   }
+}
