@@ -1,7 +1,11 @@
 import 'package:aceleda_bank/common/styles/colors/appcolor.dart';
+import 'package:aceleda_bank/common/styles/fonts/app_font.dart';
 import 'package:aceleda_bank/common/widgets/button.dart';
 import 'package:aceleda_bank/common/widgets/text.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import '../../../../language/controller/language_controller.dart';
 
 class ProFile extends StatelessWidget {
   const ProFile({
@@ -62,13 +66,18 @@ class ProFile extends StatelessWidget {
               Expanded(
                 child: AppButton(
                   onTab: () {},
-                  text: "Edit Profile",
+                  text: 'Edit Profile'.tr,
+                  icon: "assets/images/svg/edit.svg",
+                  iconSize: 20,
+                  iconColor: Appcolors.light,
+                  space: 8.0,
                   color: Appcolors.primaryLight.withOpacity(0.5),
-                  customPadding:
-                      const EdgeInsets.symmetric(horizontal: 32, vertical: 10),
-                  textStyle: const TextStyle(
-                    fontSize: 18.0,
+                  textStyle: TextStyle(
+                    fontSize: 16.0,
                     color: Appcolors.light,
+                    fontFamily: langCtr.selectedLanguage.value == "km_KH"
+                        ? AppFonts.regularKh
+                        : AppFonts.medium,
                   ),
                 ),
               ),
@@ -77,13 +86,18 @@ class ProFile extends StatelessWidget {
                 child: AppButton(
                   width: double.infinity,
                   onTab: () {},
-                  text: "Settings",
+                  text: 'Settings'.tr,
+                  icon: "assets/images/svg/setting.svg",
+                  iconSize: 20,
+                  iconColor: Appcolors.light,
+                  space: 8.0,
                   color: Appcolors.primaryLight.withOpacity(0.5),
-                  customPadding:
-                      const EdgeInsets.symmetric(horizontal: 32, vertical: 10),
-                  textStyle: const TextStyle(
-                    fontSize: 18.0,
+                  textStyle: TextStyle(
+                    fontSize: 16.0,
                     color: Appcolors.light,
+                    fontFamily: langCtr.selectedLanguage.value == "km_KH"
+                        ? AppFonts.regularKh
+                        : AppFonts.medium,
                   ),
                 ),
               ),

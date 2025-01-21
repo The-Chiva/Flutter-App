@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:aceleda_bank/common/styles/colors/appcolor.dart';
 import 'package:aceleda_bank/common/styles/fonts/app_font.dart';
 import 'package:aceleda_bank/common/widgets/button.dart';
@@ -9,14 +7,21 @@ import 'package:aceleda_bank/featured/app/menu/component/build_footer.dart';
 import 'package:aceleda_bank/featured/app/menu/component/build_long_out.dart';
 import 'package:aceleda_bank/featured/app/menu/component/build_profile.dart';
 import 'package:aceleda_bank/featured/app/menu/model/list_tile_item.dart';
+import 'package:aceleda_bank/language/controller/language_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../common/widgets/list_tile.dart';
 
-class MenuPage extends StatelessWidget {
-  MenuPage({super.key});
+class MenuPage extends StatefulWidget {
+  const MenuPage({super.key});
 
-  final ListTileModel tile = ListTileModel();
+  @override
+  State<MenuPage> createState() => _MenuPageState();
+}
+
+class _MenuPageState extends State<MenuPage> {
+  // final ListTileModel tile = ListTileModel();
+  final tileItem = Get.put(ListTileModel());
 
   @override
   Widget build(BuildContext context) {
@@ -32,11 +37,13 @@ class MenuPage extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const AppText(
-                  text: "Menu",
+                AppText(
+                  text: 'Menu'.tr,
                   size: 30,
                   color: Appcolors.light,
-                  fontFamily: AppFonts.medium,
+                  fontFamily: langCtr.selectedLanguage.value == "km_KH"
+                      ? AppFonts.boldKh
+                      : AppFonts.medium,
                 ),
                 AppButton(
                   icon: "assets//mages/svg/logo_ac.svg",
@@ -52,7 +59,7 @@ class MenuPage extends StatelessWidget {
         child: Column(
           children: [
             // ===== Profile =====
-            ProFile(
+            const ProFile(
               image: "assets/images/png/logo.png",
               name: "THE CHIVA",
               phone: "069 496 048",
@@ -77,7 +84,7 @@ class MenuPage extends StatelessWidget {
                     width: double.infinity,
                     height: 100,
                     decoration: BoxDecoration(
-                      image: DecorationImage(
+                      image: const DecorationImage(
                         fit: BoxFit.cover,
                         image: AssetImage("assets/images/png/banner1.jpg"),
                       ),
@@ -121,36 +128,39 @@ class MenuPage extends StatelessWidget {
                       borderRadius: BorderRadius.circular(16.0),
                     ),
                     child: ListView.builder(
-                      itemCount: tile.listItems.length,
+                      itemCount: tileItem.listTile.length,
                       shrinkWrap: true,
                       physics: const NeverScrollableScrollPhysics(),
                       itemBuilder: (context, index) {
-                        final item = tile.listItems[index];
-                        return GestureDetector(
-                          onTap: () {
-                            final page = tile.listItems[index]['page'];
-                            if (page != null) {
-                              Get.to(page);
-                            } else {
-                              log("Error: Page is not defined or invalid.");
-                            }
-                          },
-                          child: Container(
-                            decoration: const BoxDecoration(
-                              border: Border(
-                                bottom: BorderSide(
-                                  color: Appcolors.strock,
-                                  width: 1,
+                        return Obx(
+                          () => GestureDetector(
+                            onTap: () =>
+                                Get.to((tileItem.listTile[index]['page'])),
+                            child: Container(
+                              decoration: const BoxDecoration(
+                                border: Border(
+                                  bottom: BorderSide(
+                                    color: Appcolors.strock,
+                                    width: 1,
+                                  ),
                                 ),
                               ),
-                            ),
-                            child: BuildListTile(
-                              tilte: item['title'],
-                              leading: Icon(item['icon']),
-                              icon: const Icon(
-                                Icons.arrow_forward_ios,
-                                size: 20,
-                                color: Appcolors.solid,
+                              child: BuildListTile(
+                                tilte: (tileItem.listTile[index]['title'])
+                                    .toString()
+                                    .tr,
+                                textstyle: TextStyle(
+                                  fontFamily:
+                                      langCtr.selectedLanguage.value == "km_KH"
+                                          ? AppFonts.boldKh
+                                          : AppFonts.regular,
+                                ),
+                                leading: Icon(tileItem.listTile[index]['icon']),
+                                icon: const Icon(
+                                  Icons.arrow_forward_ios,
+                                  size: 20,
+                                  color: Appcolors.solid,
+                                ),
                               ),
                             ),
                           ),

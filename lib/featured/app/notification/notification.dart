@@ -29,8 +29,8 @@ class NotificationPage extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const AppText(
-                  text: "Notifications",
+                AppText(
+                  text: 'notifications'.tr,
                   size: 26,
                   color: Appcolors.light,
                   fontFamily: AppFonts.medium,

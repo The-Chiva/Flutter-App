@@ -1,4 +1,5 @@
 import 'package:aceleda_bank/common/styles/colors/appcolor.dart';
+import 'package:aceleda_bank/common/styles/fonts/app_font.dart';
 import 'package:aceleda_bank/common/widgets/button.dart';
 import 'package:aceleda_bank/common/widgets/text.dart';
 import 'package:aceleda_bank/featured/app/home/conponents/app_bar.dart';
@@ -6,8 +7,10 @@ import 'package:aceleda_bank/featured/app/home/conponents/card.dart';
 import 'package:aceleda_bank/featured/app/home/conponents/dashboard.dart';
 import 'package:aceleda_bank/featured/app/home/conponents/input_password.dart';
 import 'package:aceleda_bank/featured/app/home/controller/scroll_navigation.dart';
+import 'package:aceleda_bank/language/controller/language_controller.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
 class HomePage extends StatelessWidget {
@@ -158,7 +161,8 @@ class HomePage extends StatelessWidget {
                                 Expanded(
                                   child: AppButton(
                                     text: "Forgot PIN",
-                                    customPadding: EdgeInsets.only(right: 40),
+                                    customPadding:
+                                        const EdgeInsets.only(right: 40),
                                     textStyle: const TextStyle(
                                         color: Appcolors.light, fontSize: 16),
                                     onTab: () {},
@@ -188,6 +192,51 @@ class HomePage extends StatelessWidget {
               },
             ),
             const CardSevices(),
+            // ===== Appearance =====
+            Padding(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 16.0, vertical: 16.0),
+              child: AppText(
+                text: 'Appearance'.tr,
+                fontFamily: langCtr.selectedLanguage.value == "km_KH"
+                    ? AppFonts.boldKh
+                    : AppFonts.regular,
+                color: Appcolors.primary,
+                size: 20,
+              ),
+            ),
+            Container(
+              width: double.infinity,
+              margin: const EdgeInsets.symmetric(horizontal: 16.0),
+              padding:
+                  const EdgeInsets.symmetric(vertical: 20.0, horizontal: 16.0),
+              decoration: BoxDecoration(
+                color: Appcolors.primary,
+                borderRadius: BorderRadius.circular(16.0),
+                border:
+                    Border.all(color: Appcolors.primaryLight.withOpacity(0.3)),
+                image: const DecorationImage(
+                    image: AssetImage("assets/images/png/cusomize.png"),
+                    fit: BoxFit.fitWidth,
+                    filterQuality: FilterQuality.high),
+              ),
+              child: const Align(
+                alignment: Alignment.centerRight,
+                child: AppButton(
+                  width: 100,
+                  height: 40,
+                  radius: 50.0,
+                  text: "Customize",
+                  color: Appcolors.primary,
+                  textStyle: TextStyle(
+                    color: Appcolors.light,
+                  ),
+                  padding: 10,
+                ),
+              ),
+            ),
+            //
+            const SizedBox(height: 100.0),
           ],
         ),
       ),

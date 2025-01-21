@@ -11,7 +11,7 @@ import 'package:get/get.dart';
 class MyKhqr extends StatelessWidget {
   MyKhqr({super.key});
 
-  final RxString selectedAccount = ''.obs;
+  final RxString selectedAccount = 'KHR | 069 496 048'.obs;
 
   @override
   Widget build(BuildContext context) {
@@ -76,7 +76,7 @@ class MyKhqr extends StatelessWidget {
                       const SizedBox(height: 8.0),
                       // name
                       Padding(
-                        padding: EdgeInsets.only(left: 32.0),
+                        padding: const EdgeInsets.only(left: 32.0),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -156,9 +156,7 @@ class MyKhqr extends StatelessWidget {
                   child: Row(
                     children: [
                       Text(
-                        selectedAccount.value.isEmpty
-                            ? "Select an account"
-                            : selectedAccount.value,
+                        selectedAccount.value,
                         style: const TextStyle(
                           fontSize: 14,
                           color: Appcolors.light,

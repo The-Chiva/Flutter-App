@@ -10,7 +10,7 @@ class HomeViewModel extends GetxController {
     },
     {
       'icon': 'assets/images/svg/iphone.svg',
-      'title': 'Mobile Top-up',
+      'title': 'Mobile-Top-up',
     },
     {
       'icon': 'assets/images/svg/transfer.svg',

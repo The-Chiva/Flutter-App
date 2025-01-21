@@ -3,8 +3,10 @@ import 'package:aceleda_bank/common/styles/fonts/app_font.dart';
 import 'package:aceleda_bank/common/widgets/button.dart';
 import 'package:aceleda_bank/common/widgets/text.dart';
 import 'package:aceleda_bank/featured/app/home/home_view_model.dart';
+import 'package:aceleda_bank/language/controller/language_controller.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class DashBoard extends StatelessWidget {
   const DashBoard({
@@ -52,9 +54,11 @@ class DashBoard extends StatelessWidget {
                     ),
                     const SizedBox(height: 8),
                     AppText(
-                      text: homeMoel.pages[index]['title'],
+                      text: (homeMoel.pages[index]['title']).toString().tr,
                       color: Appcolors.light,
-                      fontFamily: AppFonts.medium,
+                      fontFamily: langCtr.selectedLanguage.value == "km_KH"
+                          ? AppFonts.boldKh
+                          : AppFonts.regular,
                     ),
                   ],
                 ),
