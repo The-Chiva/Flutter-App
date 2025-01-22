@@ -46,7 +46,7 @@ class _MenuPageState extends State<MenuPage> {
                       : AppFonts.medium,
                 ),
                 AppButton(
-                  icon: "assets//mages/svg/logo_ac.svg",
+                  icon: "assets/images/svg/logo_ac.svg",
                   iconSize: 35,
                   onTab: () => pageModel.page.value = 0,
                 )

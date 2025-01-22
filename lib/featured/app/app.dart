@@ -19,7 +19,6 @@ class App extends StatelessWidget {
         body: pageModel.pages[pageModel.page.value]["page"],
         bottomNavigationBar: Container(
             width: double.infinity,
-            // duration: const Duration(milliseconds: 300),
             height: scrollCtr.showNav.value ? 60 : 0,
             decoration: BoxDecoration(
               border: Border(top: BorderSide(color: Colors.grey.shade200)),
@@ -40,7 +39,6 @@ class App extends StatelessWidget {
                 : null),
         floatingActionButton: !scrollCtr.showNav.value
             ? Container(
-                // padding: EdgeInsets.only(bottom: 60),
                 width: 70,
                 height: 70,
                 decoration: BoxDecoration(
@@ -95,15 +93,15 @@ class BottomNavItem extends StatelessWidget {
           children: [
             SvgPicture.asset(
               icon,
-              width: 24,
-              height: 24,
+              width: 23,
+              height: 23,
               fit: BoxFit.cover,
               color: isSelected ? Appcolors.gold : Appcolors.primary,
             ),
             const SizedBox(height: 4),
             AppText(
               text: title,
-              size: 14,
+              size: 12,
               color: isSelected ? Appcolors.gold : Appcolors.primary,
             ),
           ],

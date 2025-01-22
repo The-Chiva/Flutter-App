@@ -7,7 +7,6 @@ class LanguageData extends Translations {
           // menu
           'Menu': 'Menu',
           'CountryLanguage': 'Country and Language',
-          'totifications': ' Notifications',
           'location': 'Location',
           'Terms and Conditions': 'Terms and Conditions',
           'Products & Services': 'Products & Services',
@@ -24,7 +23,7 @@ class LanguageData extends Translations {
               'Your ACLEDA mobile version is up to date',
           'Edit Profile': 'Edit Profile',
           'Settings': 'Settings',
-
+          // home page
           //dasboard
           'Payment': 'Payment',
           'Mobile-Top-up': 'Mobile Top-up',
@@ -36,17 +35,48 @@ class LanguageData extends Translations {
           'Loands': 'Loands',
           'Quick Cash': 'Quick Cash',
           'Appearance': 'Appearance',
+          'Recent Transactions': 'Recent Transactions',
+          'Customize': 'Customize',
+          'Contract Us (24/7)': 'Contract Us (24/7)',
+
+          // Notifications
+          'Notifications': ' Notifications',
+          'Translation': 'Translation',
+          'Bank Information': 'Bank Information',
+          'Empty': 'Empty',
+          'You have no notifications here.': 'You have no notifications here.',
+          'Jan 08, 2025 4:05 PM': 'Jan 08, 2025 4:05 PM',
+          'You have paid KHR 20,000.00 to Chiva The, ABA Bank, by KHQR, on 08-jan-2025 04:05 pm.':
+              'You have paid KHR 20,000.00 to Chiva The, ABA Bank, by KHQR, on 08-jan-2025 04:05.',
+          // recept
+          'Payment Amount': 'Payment Amount',
+          '2.75 USD': '2.75 USD',
+          'Vai BAKONG': 'Vai BAKONG',
+          'Fee': 'Fee',
+          '0 KHR': '0 KHR',
+          'Reciever': 'Reciever',
+          'Debit amount': 'Debit amount',
+          'Exchange rate"': 'Exchange rate"',
+          'Form amount': 'Form amount',
+          'Date': 'Date',
+          'Jan 21, 2025 01:51 PM': 'Jan 21, 2025 01:51 PM',
+          'Completed': 'Completed',
+          'External Txn': 'External Txn',
+          'Ref. 50211892304': 'Ref. 50211892304',
+
+          // Favorites
+          'Favorites': 'Favorites',
+          'Search for a favorite': 'Search for a favorite',
         },
         'km_KH': {
           // menu
           'Menu': 'ម៉ឺនុយ',
           'CountryLanguage': 'ប្រទេស​ និងភាសា',
-          'notifications': 'ជូនដំណឹង',
           'location': 'ទីតាំង',
           'Terms and Conditions': 'លក្ខខណ្ឌទូទៅ',
           'Products & Services': 'ផលិតផល​ និង សេវាកម្ម',
           'Invite Friends': 'ផ្ញើកម្មវិធីនេះទៅមិត្តភក្តិ',
-          'FAQs': 'FAQs',
+          'FAQs': 'សំណួរ-ចម្លើយ',
           'ACleda Bank\'s Stock': 'តម្លៃភាគហ៊ុនធនាគារ​ អេស៊ីលីដា​ ភីអិលស៊ី',
           'Security Tips': 'លក្ខខណ្ឌសោវត្តិភាព',
           'Contact Us (24/7)': 'ទំនាក់ទំនង (២៤/៧)',
@@ -59,7 +89,7 @@ class LanguageData extends Translations {
               'លោកអ្នកកំពុងប្រើប្រាស់អេស៊ីលីដា ម៉ូបាលជំនាន់ចុងក្រោយ',
           'Edit Profile': 'ប្តូរព័ត៌មានផ្ទាល់ខ្លូន',
           'Settings': 'កំណត់មុខងារផ្សេងៗ',
-
+          // home page
           //dasboard
           'Payment': 'បង់ប្រាក់',
           'Mobile-Top-up': 'បញ្ចូលលុយ',
@@ -71,6 +101,38 @@ class LanguageData extends Translations {
           'Loands': 'ប្រាក់កម្ចី',
           'Quick Cash': 'ដកប្រាក់រហ័ស',
           'Appearance': 'ទម្រង់',
+          'Recent Transactions': 'ប្រតិបត្តការថ្មីៗ',
+          'Customize': 'ប្តូរតាមតម្រូវការ',
+          'Contract Us (24/7)': 'ទំនាក់ទំនង (២៤/៧)',
+
+          // Notifications
+          'Notifications': 'ការជូនដំណឹង',
+          'Translation': 'ប្រតិបត្តិការ',
+          'Bank Information': 'ព័ត៌មានធនាគារ',
+          'Empty': 'ទទេ',
+          'You have no notifications here.': 'លោកអ្នកមិនមានការជូនដំណឹងនៅទីនេះ។',
+          'Jan 08, 2025 4:05 PM': '០៨​ មករា ២០២៥ ៤:០៥ ល្ងាច',
+          'You have paid KHR 20,000.00 to Chiva The, ABA Bank, by KHQR, on 08-jan-2025 04:05 pm.':
+              'លោកអ្នកបានទូទាត់​ 20,000 រៀល ទៅ Chiva The, ABA Bank តាម​ KHQR, ថ្ងៃទី ០៨ មករា ២០២៥ ០៤:០៥ ល្ងាច។',
+          // recept
+          'Payment Amount': 'ចំនួនទឹកប្រាក់',
+          '2.75 USD': '2.75 ដុល្លា',
+          'Vai BAKONG': 'តាមបាគង',
+          'Fee': 'ថ្លៃសេវា',
+          '0 KHR': '0 KHR',
+          'Reciever': 'គណនីទទួល',
+          'Debit amount': 'ទឺកប្រាក់ទូទាត់',
+          'Exchange rate"': 'អត្រាប្តូរប្រាក់"',
+          'Form amount': 'គណនីផ្ទេរចេញ',
+          'Date': 'កាលបច្ឆេទ',
+          'Jan 21, 2025 01:51 PM': '២១​ មករា ២០២៥ ០១:៥៩ ល្ងាច',
+          'Completed': 'ជោគជ័យ',
+          'Ref. 50211892304': 'លេខយោង. 50211892304',
+          'External Txn': 'ប្រតិបត្តិខាងក្រៅ',
+
+          // Favorites
+          'Favorites': 'កំណត់ត្រា',
+          'Search for a favorite': 'ស្វែងរក ...',
         },
       };
 }

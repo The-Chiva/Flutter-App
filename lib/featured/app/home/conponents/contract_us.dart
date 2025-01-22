@@ -1,6 +1,7 @@
 import 'package:aceleda_bank/common/widgets/app_bar.dart';
 import 'package:aceleda_bank/common/widgets/list_tile.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class ContractUs extends StatelessWidget {
   const ContractUs({super.key});
@@ -8,10 +9,10 @@ class ContractUs extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const PreferredSize(
+      appBar:  PreferredSize(
         preferredSize: Size.fromHeight(70),
         child: BuildAppBar(
-          title: "Contract Us (24/7)",
+          title: 'Contract Us (24/7)'.tr,
           titleSize: 24,
         ),
       ),

@@ -1,6 +1,6 @@
 import 'package:aceleda_bank/common/styles/colors/appcolor.dart';
 import 'package:aceleda_bank/common/widgets/app_bar.dart';
-import 'package:aceleda_bank/featured/app/app.dart';
+import 'package:aceleda_bank/featured/app/app_view_model.dart';
 import 'package:aceleda_bank/language/controller/language_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -16,21 +16,21 @@ class LanguageLogic extends StatefulWidget {
 class _LanguageLogicState extends State<LanguageLogic> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: PreferredSize(
-        preferredSize: const Size(0, 70),
-        child: BuildAppBar(
-          title: 'CountryLanguage'.tr,
-          titleSize: 18,
-          onTap: () => Get.to(() => App()),
+    return Obx(
+      () => Scaffold(
+        appBar: PreferredSize(
+          preferredSize: const Size(0, 70),
+          child: BuildAppBar(
+            title: 'CountryLanguage'.tr,
+            titleSize: 18,
+            onTap: () => pageModel.page.value = 0,
+          ),
         ),
-      ),
-      body: Obx(
-        () => Column(
+        body: Column(
           children: [
             ContainerLang(
-              // onTap: () => changeLanguage('km_KH', Locale('km', 'KH')),
-              onTap: () => langCtr.changeLanguage('km_KH', Locale('km', 'KH')),
+              onTap: () =>
+                  langCtr.changeLanguage('km_KH', const Locale('km', 'KH')),
               image: "assets/images/png/flag_cambodia.png",
               name: "Khmer",
               language: "ភាសាខ្មែរ",
@@ -39,7 +39,7 @@ class _LanguageLogicState extends State<LanguageLogic> {
                   : Appcolors.dark,
             ),
             ContainerLang(
-              onTap: () => langCtr.changeLanguage('en_US', Locale('en', 'US')),
+              onTap: () => langCtr.changeLanguage('en_US', const Locale('en', 'US')),
               image: "assets/images/png/flag_english.jpeg",
               name: "English",
               language: "English",

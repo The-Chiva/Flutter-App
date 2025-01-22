@@ -16,7 +16,7 @@ class MyKhqr extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const PreferredSize(
+      appBar: PreferredSize(
         preferredSize: Size.fromHeight(70),
         child: BuildAppBar(
           title: "My KHQR",
@@ -179,18 +179,21 @@ class MyKhqr extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     ColumnButton(
-                      icon: "assets/images/svg/payments.svg",
+                      icon: "assets/images/svg/save.svg",
                       text: "Save",
+                      iconsize: 26,
                       onTab: () {},
                     ),
                     ColumnButton(
-                      icon: "assets/images/svg/payments.svg",
+                      icon: "assets/images/svg/set_amount.svg",
                       text: "SET AMOUNT",
                       onTab: () {},
+                      iconsize: 26,
                     ),
                     ColumnButton(
-                      icon: "assets/images/svg/payments.svg",
+                      icon: "assets/images/svg/share_link.svg",
                       text: "SHARE LINK",
+                      iconsize: 20,
                       onTab: () {},
                     ),
                   ],
@@ -210,9 +213,11 @@ class ColumnButton extends StatelessWidget {
     required this.icon,
     required this.text,
     this.onTab,
+    this.iconsize = 24,
   });
   final String icon;
   final String text;
+  final double iconsize;
   final Function()? onTab;
 
   @override
@@ -222,14 +227,14 @@ class ColumnButton extends StatelessWidget {
       children: [
         AppButton(
           icon: icon,
-          iconSize: 26,
+          iconSize: iconsize,
           iconColor: Appcolors.light,
-          padding: 16,
+          padding: 13,
           color: Appcolors.primaryLight.withOpacity(0.5),
           radius: 100,
           onTab: () {},
         ),
-        const SizedBox(height: 8.0),
+        const SizedBox(height: 4.0),
         AppText(
           text: text,
           color: Appcolors.light,

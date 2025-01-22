@@ -1,9 +1,9 @@
-import 'package:aceleda_bank/featured/app/home/home_page.dart';
 import 'package:aceleda_bank/featured/app/menu/menu_page.dart';
 import 'package:aceleda_bank/featured/app/notification/notification.dart';
 import 'package:get/get.dart';
 
 import 'favorite/fav_page.dart';
+import 'home/home_page.dart';
 
 final pageModel = Get.put(AppViewModel());
 

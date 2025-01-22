@@ -3,7 +3,9 @@ import 'package:aceleda_bank/common/styles/fonts/app_font.dart';
 import 'package:aceleda_bank/common/widgets/button.dart';
 import 'package:aceleda_bank/common/widgets/text.dart';
 import 'package:aceleda_bank/featured/app/app_view_model.dart';
+import 'package:aceleda_bank/language/controller/language_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class FavoritePage extends StatelessWidget {
   const FavoritePage({super.key});
@@ -20,11 +22,13 @@ class FavoritePage extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const AppText(
-                text: "Favorites",
+              AppText(
+                text: 'Favorites'.tr,
                 size: 26,
                 color: Appcolors.light,
-                fontFamily: AppFonts.medium,
+                fontFamily: langCtr.selectedLanguage.value == "km_KH"
+                    ? AppFonts.boldKh
+                    : AppFonts.medium,
               ),
               AppButton(
                 icon: "assets/images/svg/logo_ac.svg",
@@ -88,10 +92,13 @@ class FavoritePage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(50.0),
                     borderSide: BorderSide(color: Appcolors.primaryLight),
                   ),
-                  labelText: "Search for a favorite",
+                  labelText: 'Search for a favorite'.tr,
                   labelStyle: TextStyle(
                     fontSize: 16,
-                    color: Appcolors.primary,
+                    color: Appcolors.solid,
+                    fontFamily: langCtr.selectedLanguage.value == "km_KH"
+                        ? AppFonts.regularKh
+                        : AppFonts.medium,
                   ),
                 ),
               ),

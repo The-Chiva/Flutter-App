@@ -1,7 +1,10 @@
 import 'package:aceleda_bank/common/styles/colors/appcolor.dart';
+import 'package:aceleda_bank/common/styles/fonts/app_font.dart';
 import 'package:aceleda_bank/common/widgets/button.dart';
 import 'package:aceleda_bank/common/widgets/text.dart';
+import 'package:aceleda_bank/language/controller/language_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class BuildBankInfo extends StatelessWidget {
   const BuildBankInfo({super.key});
@@ -25,15 +28,21 @@ class BuildBankInfo extends StatelessWidget {
             radius: 50.0,
           ),
           const SizedBox(height: 6.0),
-          const AppText(
-            text: "Empty",
+          AppText(
+            text: 'Empty'.tr,
             color: Appcolors.solid,
             size: 20,
+            fontFamily: langCtr.selectedLanguage.value == "km_KH"
+                ? AppFonts.boldKh
+                : AppFonts.medium,
           ),
           const SizedBox(height: 14.0),
-          const AppText(
-            text: "You have no notifications here.",
+          AppText(
+            text: 'You have no notifications here.'.tr,
             color: Appcolors.solid,
+            fontFamily: langCtr.selectedLanguage.value == "km_KH"
+                ? AppFonts.regularKh
+                : AppFonts.medium,
           ),
         ],
       ),

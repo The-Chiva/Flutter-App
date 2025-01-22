@@ -4,6 +4,7 @@ import 'package:aceleda_bank/common/widgets/button.dart';
 import 'package:aceleda_bank/common/widgets/text.dart';
 import 'package:aceleda_bank/featured/app/app_view_model.dart';
 import 'package:aceleda_bank/featured/app/notification/component/build_empty_state.dart';
+import 'package:aceleda_bank/language/controller/language_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'component/build_floating_button.dart';
@@ -30,10 +31,12 @@ class NotificationPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 AppText(
-                  text: 'notifications'.tr,
+                  text: 'Notifications'.tr,
                   size: 26,
                   color: Appcolors.light,
-                  fontFamily: AppFonts.medium,
+                  fontFamily: langCtr.selectedLanguage.value == "km_KH"
+                      ? AppFonts.boldKh
+                      : AppFonts.medium,
                 ),
                 AppButton(
                   icon: "assets/images/svg/logo_ac.svg",
@@ -61,13 +64,13 @@ class NotificationPage extends StatelessWidget {
                   children: [
                     // ===== index 0 =====
                     buildTabButton(
-                      label: "Translation",
+                      label: 'Translation'.tr,
                       isSelected: selectedIndex.value == 0,
                       onTap: () => selectedIndex.value = 0,
                     ),
                     // ===== index 1 =====
                     buildTabButton(
-                      label: "Bank Information",
+                      label: 'Bank Information'.tr,
                       isSelected: selectedIndex.value == 1,
                       onTap: () => selectedIndex.value = 1,
                     ),
@@ -88,14 +91,14 @@ class NotificationPage extends StatelessWidget {
                   ),
                 ),
                 child: selectedIndex.value == 1
-                    ? BuildBankInfo()
+                    ? const BuildBankInfo()
                     : BuildTranSlation(
                         onTap: () {
                           showDialog(
                             context: context,
                             builder: (BuildContext context) {
                               return Dialog(
-                                backgroundColor: Appcolors.strock,
+                                // alignment: Alignment.center,
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(32.0),
                                 ),

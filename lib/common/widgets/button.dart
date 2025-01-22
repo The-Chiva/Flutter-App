@@ -22,7 +22,7 @@ class AppButton extends StatelessWidget {
   });
 
   final String? icon, text;
-  final void Function()? onTab;
+  final Function()? onTab;
   final double? width, height, space;
   final MainAxisAlignment mainAxisAlignment;
   final Color? color;

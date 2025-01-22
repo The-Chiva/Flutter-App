@@ -1,3 +1,4 @@
+import 'package:aceleda_bank/common/widgets/input_test.dart';
 import 'package:aceleda_bank/featured/app/menu/component/language_state.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -11,7 +12,7 @@ class ListTileModel extends GetxController {
       'icon': Icons.language,
     },
     {
-      'page': LanguageLogic(),
+      'page': InputTest(),
       'title': 'location',
       'icon': Icons.location_on_outlined,
     },

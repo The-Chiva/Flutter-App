@@ -1,7 +1,10 @@
 import 'package:aceleda_bank/common/styles/colors/appcolor.dart';
+import 'package:aceleda_bank/common/styles/fonts/app_font.dart';
 import 'package:aceleda_bank/common/widgets/button.dart';
 import 'package:aceleda_bank/common/widgets/text.dart';
+import 'package:aceleda_bank/language/controller/language_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class CardSevices extends StatelessWidget {
   const CardSevices({
@@ -90,12 +93,15 @@ class CardSevices extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Padding(
+                Padding(
                   padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
                   child: AppText(
-                    text: "Recent Transactions",
+                    text: 'Recent Transactions'.tr,
                     size: 20,
                     color: Appcolors.light,
+                    fontFamily: langCtr.selectedLanguage.value == "km_KH"
+                        ? AppFonts.regularKh
+                        : AppFonts.medium,
                   ),
                 ),
                 SizedBox(
