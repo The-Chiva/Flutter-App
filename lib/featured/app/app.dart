@@ -5,7 +5,6 @@ import 'package:aceleda_bank/featured/app/app_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-
 import 'home/controller/scroll_navigation.dart';
 
 class App extends StatelessWidget {

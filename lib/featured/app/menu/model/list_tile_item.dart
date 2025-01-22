@@ -1,5 +1,9 @@
 import 'package:aceleda_bank/common/widgets/input_test.dart';
+import 'package:aceleda_bank/featured/app/menu/component/faqs.dart';
+import 'package:aceleda_bank/featured/app/menu/component/invite_friends.dart';
 import 'package:aceleda_bank/featured/app/menu/component/language_state.dart';
+import 'package:aceleda_bank/featured/app/menu/component/product.dart';
+import 'package:aceleda_bank/featured/app/menu/component/term.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -17,22 +21,22 @@ class ListTileModel extends GetxController {
       'icon': Icons.location_on_outlined,
     },
     {
-      'page': LanguageLogic(),
+      'page': TermCondition(),
       'title': 'Terms and Conditions',
       'icon': Icons.insert_drive_file_outlined,
     },
     {
-      'page': LanguageLogic(),
+      'page': ProductService(),
       'title': 'Products & Services',
       'icon': Icons.home_work_outlined,
     },
     {
-      'page': LanguageLogic(),
+      'page': Faqs(),
       'title': 'FAQs',
       'icon': Icons.cable,
     },
     {
-      'page': LanguageLogic(),
+      'page': InviteFriends(),
       'title': 'Invite Friends',
       'icon': Icons.person_add_alt_1_outlined,
     },
