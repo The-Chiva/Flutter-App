@@ -96,7 +96,7 @@ class HomePage extends StatelessWidget {
                             color: Appcolors.light,
                           ),
                           const SizedBox(height: 2.0),
-                          // ===== OTP input field =====
+                          // ===== input field =====
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: List.generate(
@@ -134,7 +134,7 @@ class HomePage extends StatelessWidget {
                           ),
 
                           const SizedBox(height: 32.0),
-                          // ===== Number input field =====
+                          // ===== Number field =====
                           Expanded(
                             child: GridView.builder(
                               padding:
@@ -146,8 +146,7 @@ class HomePage extends StatelessWidget {
                                 mainAxisSpacing: 20,
                                 crossAxisSpacing: 32,
                               ),
-                              itemCount:
-                                  11, // Correct number of items for the layout
+                              itemCount: 11,
                               itemBuilder: (context, index) {
                                 if (index == 9) {
                                   // Empty slot (leave space)
@@ -163,7 +162,7 @@ class HomePage extends StatelessWidget {
                               },
                             ),
                           ),
-                          // ===== Forgot Pin and Cancel
+                          // ===== Forgot  and Cancel
                           Padding(
                             padding: const EdgeInsets.only(bottom: 100),
                             child: Row(
