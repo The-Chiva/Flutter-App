@@ -41,7 +41,7 @@ class LanguageData extends Translations {
 
           // Notifications
           'Notifications': ' Notifications',
-          'Translation': 'Translation',
+          'Transaction': 'Transactions',
           'Bank Information': 'Bank Information',
           'Empty': 'Empty',
           'You have no notifications here.': 'You have no notifications here.',
@@ -107,7 +107,7 @@ class LanguageData extends Translations {
 
           // Notifications
           'Notifications': 'ការជូនដំណឹង',
-          'Translation': 'ប្រតិបត្តិការ',
+          'Transaction': 'ប្រតិបត្តិការ',
           'Bank Information': 'ព័ត៌មានធនាគារ',
           'Empty': 'ទទេ',
           'You have no notifications here.': 'លោកអ្នកមិនមានការជូនដំណឹងនៅទីនេះ។',

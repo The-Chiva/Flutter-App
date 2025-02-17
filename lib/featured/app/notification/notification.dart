@@ -64,7 +64,7 @@ class NotificationPage extends StatelessWidget {
                   children: [
                     // ===== index 0 =====
                     buildTabButton(
-                      label: 'Translation'.tr,
+                      label: 'Transaction'.tr,
                       isSelected: selectedIndex.value == 0,
                       onTap: () => selectedIndex.value = 0,
                     ),

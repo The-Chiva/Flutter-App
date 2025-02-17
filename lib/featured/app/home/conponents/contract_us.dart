@@ -9,7 +9,7 @@ class ContractUs extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:  PreferredSize(
+      appBar: PreferredSize(
         preferredSize: Size.fromHeight(70),
         child: BuildAppBar(
           title: 'Contract Us (24/7)'.tr,
@@ -30,28 +30,12 @@ class ContractUs extends StatelessWidget {
                 tilte: "023 999 233",
               ),
               BuildListTile(
-                leading: Icon(Icons.phone),
-                tilte: "023 999 233",
+                leading: Icon(Icons.telegram),
+                tilte: "Telegram",
               ),
               BuildListTile(
-                leading: Icon(Icons.phone),
-                tilte: "023 999 233",
-              ),
-              BuildListTile(
-                leading: Icon(Icons.phone),
-                tilte: "023 999 233",
-              ),
-              BuildListTile(
-                leading: Icon(Icons.phone),
-                tilte: "023 999 233",
-              ),
-              BuildListTile(
-                leading: Icon(Icons.phone),
-                tilte: "023 999 233",
-              ),
-              BuildListTile(
-                leading: Icon(Icons.phone),
-                tilte: "023 999 233",
+                leading: Icon(Icons.facebook),
+                tilte: "Facebook",
               ),
             ],
           )
