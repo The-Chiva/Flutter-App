@@ -94,17 +94,16 @@ class NotificationPage extends StatelessWidget {
                     ? const BuildBankInfo()
                     : BuildTranSlation(
                         onTap: () {
-                          showDialog(
-                            context: context,
-                            builder: (BuildContext context) {
-                              return Dialog(
-                                // alignment: Alignment.center,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(32.0),
-                                ),
+                          Get.dialog(
+                            Dialog(
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10)),
+                              child: SizedBox(
+                                height: 600,
                                 child: buildPopUp(),
-                              );
-                            },
+                              ),
+                            ),
+                            barrierDismissible: true,
                           );
                         },
                       ),

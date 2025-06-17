@@ -68,12 +68,13 @@ class ProFile extends StatelessWidget {
                   onTab: () {},
                   text: 'Edit Profile'.tr,
                   icon: "assets/images/svg/edit.svg",
-                  iconSize: 20,
+                  iconSize: 18,
                   iconColor: Appcolors.light,
                   space: 8.0,
                   color: Appcolors.primaryLight.withOpacity(0.5),
                   textStyle: TextStyle(
-                    fontSize: 16.0,
+                    fontSize:
+                        langCtr.selectedLanguage.value == "km_KH" ? 12.0 : 15.0,
                     color: Appcolors.light,
                     fontFamily: langCtr.selectedLanguage.value == "km_KH"
                         ? AppFonts.regularKh
@@ -88,12 +89,13 @@ class ProFile extends StatelessWidget {
                   onTab: () {},
                   text: 'Settings'.tr,
                   icon: "assets/images/svg/setting.svg",
-                  iconSize: 20,
+                  iconSize: 18,
                   iconColor: Appcolors.light,
                   space: 8.0,
                   color: Appcolors.primaryLight.withOpacity(0.5),
                   textStyle: TextStyle(
-                    fontSize: 16.0,
+                    fontSize:
+                        langCtr.selectedLanguage.value == "km_KH" ? 12.0 : 15.0,
                     color: Appcolors.light,
                     fontFamily: langCtr.selectedLanguage.value == "km_KH"
                         ? AppFonts.regularKh

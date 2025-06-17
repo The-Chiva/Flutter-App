@@ -6,8 +6,8 @@ class AppText extends StatelessWidget {
   const AppText({
     super.key,
     required this.text,
-    this.size = 16,
-    this.color = Appcolors.dark, 
+    this.size = 15,
+    this.color = Appcolors.dark,
     this.fontFamily = AppFonts.regular,
     this.line,
     this.overFlow,

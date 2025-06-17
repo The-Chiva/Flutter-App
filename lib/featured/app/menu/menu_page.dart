@@ -96,7 +96,7 @@ class _MenuPageState extends State<MenuPage> {
                       children: [
                         const AppText(
                           text: "You got 0 Points ",
-                          color: Appcolors.light,
+                          color: Appcolors.gold,
                         ),
                         Container(
                           padding: const EdgeInsets.symmetric(
@@ -150,9 +150,10 @@ class _MenuPageState extends State<MenuPage> {
                                     .toString()
                                     .tr,
                                 textstyle: TextStyle(
+                                  fontSize: 15.0,
                                   fontFamily:
                                       langCtr.selectedLanguage.value == "km_KH"
-                                          ? AppFonts.boldKh
+                                          ? AppFonts.medium
                                           : AppFonts.regular,
                                 ),
                                 leading: Icon(tileItem.listTile[index]['icon']),

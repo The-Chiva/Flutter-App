@@ -1,7 +1,10 @@
+import 'dart:developer';
+
 import 'package:aceleda_bank/common/styles/colors/appcolor.dart';
 import 'package:aceleda_bank/common/widgets/button.dart';
 import 'package:aceleda_bank/common/widgets/text.dart';
 import 'package:aceleda_bank/featured/app/app_view_model.dart';
+import 'package:aceleda_bank/featured/app/home/conponents/qr_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
@@ -55,7 +58,9 @@ class App extends StatelessWidget {
                     iconColor: Appcolors.light,
                     iconSize: 30,
                     padding: 0,
-                    onTab: () {},
+                    onTab: () {
+                      Get.to(() => QRScannerScreen());
+                    },
                   ),
                 ),
               )

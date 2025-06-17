@@ -5,10 +5,12 @@ import 'package:aceleda_bank/common/widgets/text.dart';
 import 'package:aceleda_bank/featured/app/home/conponents/app_bar.dart';
 import 'package:aceleda_bank/featured/app/home/conponents/card.dart';
 import 'package:aceleda_bank/featured/app/home/conponents/dashboard.dart';
+import 'package:aceleda_bank/featured/app/home/conponents/qr_view.dart';
 import 'package:aceleda_bank/featured/app/home/controller/scroll_navigation.dart';
 import 'package:aceleda_bank/language/controller/language_controller.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
 class HomePage extends StatelessWidget {
@@ -255,32 +257,6 @@ class HomePage extends StatelessWidget {
           ],
         ),
       ),
-      floatingActionButton: !scrollCtr.showNav.value
-          ? Container(
-              width: 70,
-              height: 70,
-              decoration: BoxDecoration(
-                color: Appcolors.primaryLight.withOpacity(0.5),
-                borderRadius: BorderRadius.circular(50),
-              ),
-              child: Container(
-                margin: const EdgeInsets.all(7),
-                decoration: BoxDecoration(
-                    color: Appcolors.primaryLight,
-                    borderRadius: BorderRadius.circular(50),
-                    border: Border.all(color: Appcolors.light)),
-                child: AppButton(
-                  icon: "assets/images/svg/scan_qr.svg",
-                  iconColor: Appcolors.light,
-                  iconSize: 30,
-                  padding: 0,
-                  onTab: () {},
-                ),
-              ),
-            )
-          : null,
-      floatingActionButtonLocation:
-          FloatingActionButtonLocation.miniCenterFloat,
     );
   }
 
@@ -293,10 +269,20 @@ class HomePage extends StatelessWidget {
         }
         if (otpInputs.join() == '123456') {
           Future.delayed(const Duration(milliseconds: 500), () {
-            Get.to(const SuccessPage());
+            Get.off(const SuccessPage());
             otpInputs.clear();
             otpInputs.addAll(List.filled(6, ''));
           });
+        } else if (otpInputs.every((e) => e.isNotEmpty)) {
+          Get.snackbar(
+            'Error',
+            'Incorrect PIN',
+            snackPosition: SnackPosition.BOTTOM,
+            backgroundColor: Colors.red,
+            colorText: Colors.white,
+          );
+          otpInputs.clear();
+          otpInputs.addAll(List.filled(6, ''));
         }
       },
       child: Container(
